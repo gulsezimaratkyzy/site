@@ -77,26 +77,43 @@
   items.forEach(function (item) { observer.observe(item); });
 })();
 
-// Фондық әуен — тек батырманы басқанда ғана қосылады
+// Фондық әуен — ашылған бетте бірден қосылады
 (function music() {
   var audio = document.getElementById('bg-music');
   var btn = document.getElementById('music-toggle');
+  var label = btn.querySelector('.music-label');
 
-  function play() {
-    audio.play().then(function () {
-      btn.classList.add('is-playing');
-    }).catch(function () {
-      btn.classList.remove('is-playing');
-    });
+  function setUI(isPlaying) {
+    btn.classList.toggle('is-playing', isPlaying);
+    var text = isPlaying ? 'Әуенді өшіру' : 'Әуенді қосу';
+    label.textContent = text;
+    btn.setAttribute('aria-label', text);
   }
 
-  function pause() {
-    audio.pause();
-    btn.classList.remove('is-playing');
+  audio.addEventListener('play', function () { setUI(true); });
+  audio.addEventListener('pause', function () { setUI(false); });
+
+  function tryPlay() {
+    audio.play().catch(function () { /* браузер автоқосуды бөгеді */ });
   }
+
+  tryPlay();
+
+  // Браузер автоқосуды бөгесе, алғашқы жанасудан кейін қосамыз
+  function retryOnInteraction() {
+    if (audio.paused) { tryPlay(); }
+    window.removeEventListener('pointerdown', retryOnInteraction);
+    window.removeEventListener('scroll', retryOnInteraction);
+    window.removeEventListener('touchstart', retryOnInteraction);
+    window.removeEventListener('keydown', retryOnInteraction);
+  }
+  window.addEventListener('pointerdown', retryOnInteraction, { once: true });
+  window.addEventListener('scroll', retryOnInteraction, { once: true, passive: true });
+  window.addEventListener('touchstart', retryOnInteraction, { once: true, passive: true });
+  window.addEventListener('keydown', retryOnInteraction, { once: true });
 
   btn.addEventListener('click', function () {
-    if (audio.paused) { play(); } else { pause(); }
+    if (audio.paused) { tryPlay(); } else { audio.pause(); }
   });
 })();
 
