@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B8%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
 <div class="petals" aria-hidden="true"></div>
 
 <audio id="bg-music" loop preload="none">
-  <source src="https://cdn.pixabay.com/audio/2026/07/05/audio_469bd6ddf4.mp3" type="audio/mpeg">
+  <source src="https://cdn.pixabay.com/audio/2025/12/15/audio_3e74f48e5c.mp3" type="audio/mpeg">
 </audio>
 
 <button id="music-toggle" class="music-btn" aria-label="Әуенді қосу немесе тоқтату" title="Әуен">
@@ -30,7 +30,7 @@
 <header class="hero" id="hero">
   <div class="hero__overlay"></div>
   <div class="hero__content reveal">
-    <p class="eyebrow">Қош келдіңіздер</p>
+    <p class="eyebrow script">Қош келдіңіздер</p>
     <div class="flourish">
       <svg viewBox="0 0 200 24" class="flourish__svg"><path d="M0 12 C 40 12, 60 2, 100 2 C 140 2, 160 12, 200 12" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="100" cy="12" r="4" fill="currentColor"/></svg>
     </div>
@@ -66,7 +66,7 @@
     <div class="letter__bg"></div>
     <div class="container reveal">
       <div class="letter__card">
-        <p class="letter__title">Құрметті</p>
+        <p class="letter__title script">Құрметті</p>
         <p class="letter__names">
           ағайын-туыс, бауырлар,<br>
           құда-жекжат, нағашы-жиен,<br>
@@ -91,6 +91,33 @@
         <div class="timer__box"><span class="timer__num" id="t-secs">00</span><span class="timer__label">секунд</span></div>
       </div>
       <p class="countdown__done" id="timer-done" hidden>Мерекелі күн келді! 🎉</p>
+    </div>
+  </section>
+
+  <!-- ===== CALENDAR ===== -->
+  <section class="section calendar-section" id="calendar">
+    <div class="container reveal">
+      <h2 class="calendar__heading script">Той салтанаты:</h2>
+      <div class="date-strip">
+        <div class="date-strip__side">
+          <span class="date-strip__line"></span>
+          <span class="date-strip__label">сенбі</span>
+        </div>
+        <div class="date-strip__day">10</div>
+        <div class="date-strip__side">
+          <span class="date-strip__line"></span>
+          <span class="date-strip__label">19:00</span>
+        </div>
+      </div>
+      <p class="date-strip__year">2026 жыл</p>
+
+      <div class="mini-calendar">
+        <p class="mini-calendar__month">қазан</p>
+        <div class="mini-calendar__dow-row">
+          <span>ДС</span><span>СС</span><span>СР</span><span>БС</span><span>ЖМ</span><span>СН</span><span>ЖС</span>
+        </div>
+        <div class="mini-calendar__grid" id="mini-calendar-grid" aria-label="Қазан 2026 күнтізбесі"></div>
+      </div>
     </div>
   </section>
 
@@ -119,7 +146,6 @@
           </span>
           <h3 class="card__title">Мекен-жайы</h3>
           <p class="card__text">Таукент кенті,<br>«Алтын босаға-2» тойханасы</p>
-          <a class="card__link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%D0%90%D0%BB%D1%82%D1%8B%D0%BD%20%D0%B1%D0%BE%D1%81%D0%B0%D2%93%D0%B0-2%20%D1%82%D0%BE%D0%B9%D1%85%D0%B0%D0%BD%D0%B0%D1%81%D1%8B%20%D0%A2%D0%B0%D1%83%D0%BA%D0%B5%D0%BD%D1%82">Мекен-жайды көру →</a>
         </div>
       </div>
     </div>
@@ -132,7 +158,17 @@
       <div class="flourish"><svg viewBox="0 0 200 24" class="flourish__svg"><path d="M0 12 C 40 12, 60 2, 100 2 C 140 2, 160 12, 200 12" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="100" cy="12" r="4" fill="currentColor"/></svg></div>
       <p class="section-label">Той иелері</p>
       <h2 class="hosts__names">Марат <span class="amp">—</span> Гүлжан</h2>
-      <p class="hosts__closing">Қос қуанышымызға ортақ болыңыздар!</p>
+      <p class="hosts__closing script">Қос қуанышымызға ортақ болыңыздар!</p>
+    </div>
+  </section>
+
+  <!-- ===== FAREWELL ===== -->
+  <section class="section farewell">
+    <div class="container reveal">
+      <div class="flourish">
+        <svg viewBox="0 0 200 24" class="flourish__svg"><path d="M0 12 C 40 12, 60 2, 100 2 C 140 2, 160 12, 200 12" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="100" cy="12" r="4" fill="currentColor"/></svg>
+      </div>
+      <p class="farewell__text script">Қадірлі қонағымыз<br>болыңыздар!</p>
     </div>
   </section>
 

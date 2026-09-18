@@ -34,6 +34,35 @@
   var interval = setInterval(tick, 1000);
 })();
 
+// Мини-күнтізбе (2026 жылғы қазан, 10-күн белгіленген)
+(function miniCalendar() {
+  var grid = document.getElementById('mini-calendar-grid');
+  if (!grid) return;
+
+  var leadingPrevDays = 3;   // 28, 29, 30 қыркүйек — аптаның алдыңғы күндері
+  var daysInMonth = 31;      // қазан айындағы күн саны
+  var highlightDay = 10;
+  var prevMonthLastDay = 30; // қыркүйектегі соңғы күн
+
+  var totalCells = Math.ceil((leadingPrevDays + daysInMonth) / 7) * 7;
+  var html = '';
+
+  for (var i = 0; i < totalCells; i++) {
+    var dayNum = i - leadingPrevDays + 1;
+
+    if (i < leadingPrevDays) {
+      html += '<span class="day day--muted">' + (prevMonthLastDay - leadingPrevDays + i + 1) + '</span>';
+    } else if (dayNum <= daysInMonth) {
+      var cls = 'day' + (dayNum === highlightDay ? ' day--highlight' : '');
+      html += '<span class="' + cls + '">' + dayNum + '</span>';
+    } else {
+      html += '<span class="day day--muted"></span>';
+    }
+  }
+
+  grid.innerHTML = html;
+})();
+
 // Скролл кезінде пайда болу анимациясы
 (function reveal() {
   var items = document.querySelectorAll('.reveal');
