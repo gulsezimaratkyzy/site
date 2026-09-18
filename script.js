@@ -77,11 +77,10 @@
   items.forEach(function (item) { observer.observe(item); });
 })();
 
-// Фондық әуен
+// Фондық әуен — тек батырманы басқанда ғана қосылады
 (function music() {
   var audio = document.getElementById('bg-music');
   var btn = document.getElementById('music-toggle');
-  var startedByUser = false;
 
   function play() {
     audio.play().then(function () {
@@ -97,20 +96,8 @@
   }
 
   btn.addEventListener('click', function () {
-    startedByUser = true;
     if (audio.paused) { play(); } else { pause(); }
   });
-
-  // Алғашқы жанасудан кейін автоматты түрде қосу әрекеті
-  function tryAutoplay() {
-    if (!startedByUser && audio.paused) { play(); }
-    window.removeEventListener('scroll', tryAutoplay);
-    window.removeEventListener('click', tryAutoplay);
-    window.removeEventListener('touchstart', tryAutoplay);
-  }
-  window.addEventListener('scroll', tryAutoplay, { once: true, passive: true });
-  window.addEventListener('click', tryAutoplay, { once: true });
-  window.addEventListener('touchstart', tryAutoplay, { once: true, passive: true });
 })();
 
 // Ұшып түсетін гүл жапырақтары
