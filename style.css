@@ -19,7 +19,7 @@ body {
   background: var(--cream);
   color: var(--brown);
   font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
+  font-size: 19px;
   overflow-x: hidden;
 }
 
@@ -48,9 +48,9 @@ p { margin: 0; }
 
 .section-label {
   font-family: 'Montserrat', sans-serif;
-  letter-spacing: 0.26em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  font-size: 15px;
+  font-size: 17px;
   color: var(--gold-deep);
   margin-bottom: 30px;
 }
@@ -103,9 +103,9 @@ p { margin: 0; }
   background: var(--cream-soft);
   color: var(--gold-deep);
   font-family: 'Montserrat', sans-serif;
-  font-size: 12.5px;
+  font-size: 14px;
   font-weight: 600;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   white-space: nowrap;
   cursor: pointer;
@@ -156,10 +156,11 @@ p { margin: 0; }
 .hero__invite {
   font-family: 'Playfair Display', serif;
   text-transform: uppercase;
-  letter-spacing: 0.34em;
-  font-size: 18px;
-  color: var(--brown-soft);
-  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  font-size: clamp(28px, 5.5vw, 44px);
+  color: var(--gold-deep);
+  margin-bottom: 26px;
 }
 
 .eyebrow {
@@ -175,8 +176,8 @@ p { margin: 0; }
 .hero__kicker {
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-size: 15px;
+  letter-spacing: 0.18em;
+  font-size: 17px;
   color: var(--gold-deep);
   margin: 24px 0 6px;
 }
@@ -264,7 +265,7 @@ p { margin: 0; }
 }
 .letter__names {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(22px, 3vw, 28px);
+  font-size: clamp(25px, 3.4vw, 32px);
   line-height: 1.9;
   color: var(--brown);
   text-transform: lowercase;
@@ -275,7 +276,7 @@ p { margin: 0; }
 .divider span { flex: 1; height: 1px; background: var(--gold-light); }
 
 .letter__note {
-  font-size: 17px;
+  font-size: 20px;
   letter-spacing: 0.02em;
   color: var(--brown-soft);
   line-height: 1.7;
@@ -303,8 +304,8 @@ p { margin: 0; }
 .timer__label {
   display: block;
   margin-top: 12px;
-  font-size: 13px;
-  letter-spacing: 0.18em;
+  font-size: 15px;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--brown-soft);
 }
@@ -345,7 +346,7 @@ p { margin: 0; }
   background: var(--gold-light);
 }
 .date-strip__label {
-  font-size: 17px;
+  font-size: 20px;
   letter-spacing: 0.06em;
   color: var(--brown-soft);
 }
@@ -359,7 +360,7 @@ p { margin: 0; }
 .date-strip__year {
   margin-top: 16px;
   font-family: 'Playfair Display', serif;
-  font-size: 25px;
+  font-size: 28px;
   color: var(--brown);
 }
 
@@ -370,7 +371,7 @@ p { margin: 0; }
 }
 .mini-calendar__month {
   font-family: 'Playfair Display', serif;
-  font-size: 24px;
+  font-size: 27px;
   color: var(--gold-deep);
   text-transform: lowercase;
   margin-bottom: 20px;
@@ -383,7 +384,7 @@ p { margin: 0; }
   margin-bottom: 8px;
 }
 .mini-calendar__dow-row span {
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 0.04em;
   color: var(--brown);
   font-weight: 600;
@@ -395,7 +396,7 @@ p { margin: 0; }
 }
 .mini-calendar__grid .day {
   position: relative;
-  font-size: 19px;
+  font-size: 22px;
   color: var(--brown);
   padding: 7px 0;
 }
@@ -448,12 +449,12 @@ p { margin: 0; }
 }
 .card__icon svg { width: 22px; height: 22px; }
 .card__title {
-  font-size: 22px;
+  font-size: 25px;
   color: var(--brown);
   margin-bottom: 10px;
 }
 .card__text {
-  font-size: 17px;
+  font-size: 19px;
   line-height: 1.6;
   color: var(--brown-soft);
 }
@@ -486,7 +487,7 @@ p { margin: 0; }
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 640px) {
-  body { font-size: 17px; }
+  body { font-size: 18px; }
   .section { padding: 80px 0; }
   .cards { grid-template-columns: 1fr; gap: 44px; }
   .timer { gap: 20px; }
